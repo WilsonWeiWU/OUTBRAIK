@@ -115,7 +115,7 @@ def _sigmoid(z):
 def split_dataset(dataframe, n_splits):
     """Scikit-Learn KFold implementation for pandas DataFrame."""
 
-    label_col = 'Epidemic or no'
+    label_col = 'target'
     random_state = 2
     
     kf = KFold(n_splits=n_splits, shuffle=True, random_state=random_state)
