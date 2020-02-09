@@ -37,8 +37,8 @@ def separate_data(data: pd.DataFrame, test_data_ratio: float) -> Dict[str, Any]:
             "target",
     ]
     
-    data.drop(["region","deaths"], axis=1)
-    
+    data = data.drop(["region","name"], axis=1)
+
     # We want the new coronavirus to be on the test set
     corona = data.iloc[:,0]
     data = data.iloc[:,1:]
