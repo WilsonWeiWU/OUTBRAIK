@@ -137,7 +137,7 @@ def split_dataset(dataframe, n_splits):
              [train_labels, validate_labels]]
         )
 
-    with open('/Users/wilsonwu/OUTBRAIK/outbraik/data/06_models/kfolds.json', "wb") as file:
+    with open('./data/06_models/kfolds.json', "wb") as file:
         pickle.dump(kfolds, file)
 
     logging.info('Pickled kfolds nested list to JSON.')
@@ -266,7 +266,7 @@ def train_model(fold, fold_num, n_calls, epochs):
         nonlocal  best_mae
         if mae < best_mae:
             # Save the new model to harddisk.
-            model.save('/Users/wilsonwu/OUTBRAIK/outbraik/data/06_models/fold_' + str(fold_num) + '_model.h5')
+            model.save('./data/06_models/fold_' + str(fold_num) + '_model.h5')
             # Update the regressor accuracy.
             best_mae = mae
 
@@ -294,7 +294,7 @@ def train_model(fold, fold_num, n_calls, epochs):
 
     # Save skopt object.
     dump(search_result,
-         '/Users/wilsonwu/OUTBRAIK/outbraik/data/06_models/fold_' + str(fold_num) +  '_gp_minimize_result.pickle',
+         './data/06_models/fold_' + str(fold_num) +  '_gp_minimize_result.pickle',
          store_objective=False)
     logging.info('Pickled fold {} Scikit-Optimise object.'.format(fold_num))
 
@@ -356,7 +356,7 @@ def plot_convergence(all_models, n_calls, n_splits):
     ax.legend(fontsize=18)
     plt.tight_layout()
     
-    fig.savefig('~\OUTBRAIK\outbraik\data\08_reporting\convergence_plot.png')
+    fig.savefig('.\data\08_reporting\convergence_plot.png')
     
     return ax
 
