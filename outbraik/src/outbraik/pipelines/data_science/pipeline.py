@@ -46,7 +46,7 @@ def create_pipeline(**kwargs):
             ),
             node(
                 plot_convergence,
-                ["all_models", "n_calls"],
+                ["all_models", "n_calls", "n_splits"],
                 "ax",
             ),
         ]
