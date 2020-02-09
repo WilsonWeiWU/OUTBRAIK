@@ -176,6 +176,7 @@ def create_model(num_dense_layers_base, num_dense_nodes_base,
 
     # Add two output nodes.
     model.add(keras.layers.Dense(1, activation=keras.activations.linear))
+    model.add(keras.layers.Activation("sigmoid"))
 
     # Define dam optimiser.
     optimizer = tf.keras.optimizers.Adam(
