@@ -254,6 +254,8 @@ def train_model(fold, fold_num, n_calls, epochs):
                              activation=tf.keras.activations.relu,
                              adam_b1=adam_b1, adam_b2=adam_b2, adam_eps=adam_eps)
 
+        print('len(train_X.columns)')
+
         history = model.fit(train_X, train_y, # Training data
                             epochs=epochs,  # Number of forward and backward runs.
                             validation_data=(validate_X, validate_y),  # Validation data
