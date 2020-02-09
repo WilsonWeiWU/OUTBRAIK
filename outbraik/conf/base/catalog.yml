@@ -128,9 +128,3 @@ example_iris_data:
 epidemic_data:
   type: CSVLocalDataSet
   filepath: data/01_raw/Dataset.csv
-
-
-n_splits: 5
-n_calls: 40
-epochs: 200
-test_data_ratio: 0.2
