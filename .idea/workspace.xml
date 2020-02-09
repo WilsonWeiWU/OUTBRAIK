@@ -3,9 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="61048dc8-a7f8-45ee-b9f2-afc2df40743c" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/outbraik/notebooks/OUTBRAIK.ipynb" beforeDir="false" afterPath="$PROJECT_DIR$/outbraik/notebooks/OUTBRAIK.ipynb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/outbraik/src/outbraik/pipelines/data_engineering/nodes.py" beforeDir="false" afterPath="$PROJECT_DIR$/outbraik/src/outbraik/pipelines/data_engineering/nodes.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/outbraik/src/outbraik/pipelines/data_science/nodes.py" beforeDir="false" afterPath="$PROJECT_DIR$/outbraik/src/outbraik/pipelines/data_science/nodes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/outbraik/src/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/outbraik/src/requirements.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/outbraik/src/outbraik/pipelines/data_science/pipeline.py" beforeDir="false" afterPath="$PROJECT_DIR$/outbraik/src/outbraik/pipelines/data_science/pipeline.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,20 +17,27 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/outbraik/src/outbraik/pipelines/data_science/pipeline.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-275" />
+            <state relative-caret-position="349">
+              <caret line="54" column="28" selection-start-line="54" selection-start-column="28" selection-end-line="54" selection-end-column="28" />
+            </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/outbraik/src/outbraik/pipelines/data_science/nodes.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="151" column="24" selection-start-line="151" selection-start-column="24" selection-end-line="151" selection-end-column="24" />
+            <state relative-caret-position="125">
+              <caret line="374" selection-start-line="374" selection-end-line="375" />
               <folding>
                 <element signature="e#1655#1683#0" expanded="true" />
               </folding>
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/outbraik/data/08_reporting/predictions.csv">
+          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -105,6 +111,7 @@
         <option value="$PROJECT_DIR$/outbraik/src/requirements.txt" />
         <option value="$PROJECT_DIR$/outbraik/src/outbraik/pipelines/data_engineering/nodes.py" />
         <option value="$PROJECT_DIR$/outbraik/src/outbraik/pipelines/data_science/nodes.py" />
+        <option value="$PROJECT_DIR$/outbraik/src/outbraik/pipelines/data_science/pipeline.py" />
       </list>
     </option>
   </component>
@@ -131,6 +138,19 @@
               <item name="OUTBRAIK" type="b2602c69:ProjectViewProjectNode" />
               <item name="OUTBRAIK" type="462c0819:PsiDirectoryNode" />
               <item name="outbraik" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="OUTBRAIK" type="b2602c69:ProjectViewProjectNode" />
+              <item name="OUTBRAIK" type="462c0819:PsiDirectoryNode" />
+              <item name="outbraik" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="OUTBRAIK" type="b2602c69:ProjectViewProjectNode" />
+              <item name="OUTBRAIK" type="462c0819:PsiDirectoryNode" />
+              <item name="outbraik" type="462c0819:PsiDirectoryNode" />
+              <item name="data" type="462c0819:PsiDirectoryNode" />
+              <item name="08_reporting" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="OUTBRAIK" type="b2602c69:ProjectViewProjectNode" />
@@ -202,11 +222,11 @@
     <editor active="true" />
     <layout>
       <window_info id="Favorites" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2494043" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2494043" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Version Control" weight="0.32868218" />
       <window_info anchor="bottom" id="Python Console" weight="0.32868218" />
-      <window_info active="true" anchor="bottom" id="Terminal" visible="true" weight="0.33488372" />
+      <window_info anchor="bottom" id="Terminal" visible="true" weight="0.33488372" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
@@ -276,21 +296,11 @@
         <state relative-caret-position="-594" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/outbraik/src/outbraik/pipelines/data_science/pipeline.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-275" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../Library/Caches/PyCharmCE2019.1/python_stubs/-981169777/builtins.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1979">
           <caret line="486" column="4" selection-start-line="486" selection-start-column="4" selection-end-line="486" selection-end-column="4" />
         </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/outbraik/conf/base/catalog.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1445" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/outbraik/src/outbraik/nodes/OUTBRAIK.py">
@@ -319,10 +329,25 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/outbraik/data/08_reporting/predictions.csv">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/outbraik/conf/base/catalog.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1445" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/outbraik/src/outbraik/pipelines/data_science/pipeline.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="349">
+          <caret line="54" column="28" selection-start-line="54" selection-start-column="28" selection-end-line="54" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/outbraik/src/outbraik/pipelines/data_science/nodes.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="151" column="24" selection-start-line="151" selection-start-column="24" selection-end-line="151" selection-end-column="24" />
+        <state relative-caret-position="125">
+          <caret line="374" selection-start-line="374" selection-end-line="375" />
           <folding>
             <element signature="e#1655#1683#0" expanded="true" />
           </folding>

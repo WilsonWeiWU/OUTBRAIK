@@ -364,3 +364,24 @@ def plot_convergence(all_models, n_calls, n_splits):
 
 
 
+def model_predict(model_num, test_entry):
+    """Load model from HDF5 and return model prediction on a given test_entry."""
+
+    model = tf.keras.models.load_model('./data/06_models/fold_' + str(model_num) + '_model.h5')
+
+    return model.predict(test_entry)
+
+
+def test_model(test_set, n_splits):
+    n_splits = 5
+    test_X = test_set.iloc[:, :-1]
+    test_y = test_set.iloc[:, -1]
+    predict_per_fold = [model_predict(fold_num, test_X.to_numpy()) for fold_num in range(1, n_splits + 1)]
+    predict_y = np.average(predict_per_fold, axis=0)
+
+    predict_y = [x[0] for x in predict_y]
+    results_dict = {'true': test_y, 'predicted': predict_y}
+    df = pd.DataFrame.from_dict(results_dict, orient='columns')
+    df.to_csv('/Users/wilsonwu/OUTBRAIK/outbraik/data/08_reporting/predictions.csv')
+
+    return df
