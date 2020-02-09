@@ -13,6 +13,12 @@ def separate_data(data: pd.DataFrame, test_data_ratio: float) -> Dict[str, Any]:
     parameters file.
     """
     
+    print("\n###########################################")
+    print(data.columns)
+    
+    print("###########################################\n")
+    
+    
     data.columns = [
             "name",
             "region",

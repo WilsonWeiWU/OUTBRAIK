@@ -359,3 +359,6 @@ def plot_convergence(all_models, n_calls, n_splits):
     fig.savefig('.\data\08_reporting\convergence_plot.png')
     
     return ax
+
+
+
