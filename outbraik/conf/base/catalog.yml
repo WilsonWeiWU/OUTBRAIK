@@ -125,3 +125,6 @@ example_iris_data:
   type: CSVLocalDataSet
   filepath: data/01_raw/iris.csv
 
+epidemic_data:
+  type: CSVLocalDataSet
+  filepath: data/01_raw/Dataset.csv
