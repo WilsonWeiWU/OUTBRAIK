@@ -58,6 +58,8 @@ def separate_data(data: pd.DataFrame, test_data_ratio: float) -> Dict[str, Any]:
     #train_data_y = training_data["target"]
     #test_data_x = test_data.loc[:, "infected":"mortality_rate"]
     #test_data_y = test_data["target"]
+    
+    print(training_data.head())
 
     # When returning many variables, it is a good practice to give them names:
     return dict(
