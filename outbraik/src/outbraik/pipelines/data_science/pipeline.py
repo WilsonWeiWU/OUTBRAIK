@@ -41,12 +41,12 @@ def create_pipeline(**kwargs):
         [
             node(
                 train_DNN,
-                ["train", "n_splits", "n_calls", "epochs"],
+                ["train", "params:n_splits", "params:n_calls", "params:epochs"],
                 "all_models",
             ),
             node(
                 plot_convergence,
-                ["all_models", "n_calls", "n_splits"],
+                ["all_models", "params:n_calls", "params:n_splits"],
                 "ax",
             ),
         ]
