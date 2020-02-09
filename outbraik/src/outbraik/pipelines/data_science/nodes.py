@@ -356,7 +356,7 @@ def plot_convergence(all_models, n_calls, n_splits):
     ax.legend(fontsize=18)
     plt.tight_layout()
     
-    fig.savefig('.\data\08_reporting\convergence_plot.png')
+    fig.savefig('~\OUTBRAIK\outbraik\data\08_reporting\convergence_plot.png')
     
     return ax
 
