@@ -149,7 +149,7 @@ def create_model(num_dense_layers_base, num_dense_nodes_base,
                  num_dense_layers_end, num_dense_nodes_end,
                  activation, adam_b1, adam_b2, adam_eps):
     
-    num_input_nodes = 11
+    num_input_nodes = 13
     
     # Craete linear stack of layers.
     model = keras.Sequential()
