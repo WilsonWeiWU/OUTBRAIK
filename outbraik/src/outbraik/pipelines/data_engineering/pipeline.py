@@ -43,10 +43,8 @@ def create_pipeline(**kwargs):
                 separate_data,
                 ["epidemic_data", "params:test_data_ratio"],
                 dict(
-                    train_x="example_train_x",
-                    train_y="example_train_y",
-                    test_x="example_test_x",
-                    test_y="example_test_y",
+                    train="train",
+                    test="test",
                 ),
             )
         ]

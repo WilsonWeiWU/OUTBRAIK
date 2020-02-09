@@ -33,15 +33,15 @@ PLEASE DELETE THIS FILE ONCE YOU START WORKING ON YOUR OWN PROJECT!
 
 from kedro.pipeline import Pipeline, node
 
-from .nodes import predict, report_accuracy, train_model
+from .nodes import predict, report_accuracy, train_DNN
 
 
 def create_pipeline(**kwargs):
     return Pipeline(
         [
             node(
-                train_model,
-                ["example_train_x", "example_train_y", "parameters"],
+                train_DNN,
+                ["train", "n_splits", "n_calls", "epochs"],
                 "example_model",
             ),
             node(

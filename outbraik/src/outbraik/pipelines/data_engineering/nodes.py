@@ -46,16 +46,14 @@ def separate_data(data: pd.DataFrame, test_data_ratio: float) -> Dict[str, Any]:
     test_data.append(corona)
     
     # Split data into names, features and targets
-    train_data_x = training_data.loc[:, "infected":"mortality_rate"]
-    train_data_y = training_data["target"]
-    test_data_x = test_data.loc[:, "infected":"mortality_rate"]
-    test_data_y = test_data["target"]
+    #train_data_x = training_data.loc[:, "infected":"mortality_rate"]
+    #train_data_y = training_data["target"]
+    #test_data_x = test_data.loc[:, "infected":"mortality_rate"]
+    #test_data_y = test_data["target"]
 
     # When returning many variables, it is a good practice to give them names:
     return dict(
-        train_x=train_data_x,
-        train_y=train_data_y,
-        test_x=test_data_x,
-        test_y=test_data_y,
+        train=training_data,
+        test=test_data,
     )
     
