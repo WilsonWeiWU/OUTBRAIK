@@ -64,7 +64,7 @@ from skopt.utils import use_named_args
 
 # Statistics:
 import scipy
-from uncertainties import unumpy
+#from uncertainties import unumpy
 import itertools
 import statistics
 itertools.imap = lambda *args, **kwargs: list(map(*args, **kwargs))
