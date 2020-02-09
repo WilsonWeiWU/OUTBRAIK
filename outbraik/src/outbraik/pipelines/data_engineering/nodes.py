@@ -29,6 +29,8 @@ def separate_data(data: pd.DataFrame, test_data_ratio: float) -> Dict[str, Any]:
             "pop",
             "gdp",
             "infection_rate",
+            "incidence_rate",
+            "air_traffic",
             "temp",
             "humidity",
             "mortality_rate",
