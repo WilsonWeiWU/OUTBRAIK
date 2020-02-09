@@ -33,7 +33,7 @@ PLEASE DELETE THIS FILE ONCE YOU START WORKING ON YOUR OWN PROJECT!
 
 from kedro.pipeline import Pipeline, node
 
-from .nodes import predict, report_accuracy, train_DNN
+from .nodes import plot_convergence, train_DNN
 
 
 def create_pipeline(**kwargs):
@@ -42,13 +42,12 @@ def create_pipeline(**kwargs):
             node(
                 train_DNN,
                 ["train", "n_splits", "n_calls", "epochs"],
-                "example_model",
+                "all_models",
             ),
             node(
-                predict,
-                dict(model="example_model", test_x="example_test_x"),
-                "example_predictions",
+                plot_convergence,
+                ["all_models", "n_calls"],
+                "ax",
             ),
-            node(report_accuracy, ["example_predictions", "example_test_y"], None),
         ]
     )

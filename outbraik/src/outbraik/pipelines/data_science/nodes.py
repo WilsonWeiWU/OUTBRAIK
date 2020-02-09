@@ -60,7 +60,7 @@ from sklearn.model_selection import KFold
 from skopt import gp_minimize, dump
 from skopt.space import Categorical, Integer
 from skopt.utils import use_named_args
-from skopt.plots import plot_convergence
+#from skopt.plots import plot_convergence
 
 # Statistics:
 import scipy
@@ -72,40 +72,6 @@ itertools.imap = lambda *args, **kwargs: list(map(*args, **kwargs))
 
 
 
-
-def train_model(
-    train_x: pd.DataFrame, train_y: pd.DataFrame, parameters: Dict[str, Any]
-) -> np.ndarray:
-    """Node for training a simple multi-class logistic regression model. The
-    number of training iterations as well as the learning rate are taken from
-    conf/project/parameters.yml. All of the data as well as the parameters
-    will be provided to this function at the time of execution.
-    """
-    num_iter = parameters["example_num_train_iter"]
-    lr = parameters["example_learning_rate"]
-    X = train_x.values
-    Y = train_y.values
-
-    # Add bias to the features
-    bias = np.ones((X.shape[0], 1))
-    X = np.concatenate((bias, X), axis=1)
-
-    weights = []
-    # Train one model for each class in Y
-    for k in range(Y.shape[1]):
-        # Initialise weights
-        theta = np.zeros(X.shape[1])
-        y = Y[:, k]
-        for _ in range(num_iter):
-            z = np.dot(X, theta)
-            h = _sigmoid(z)
-            gradient = np.dot(X.T, (h - y)) / y.size
-            theta -= lr * gradient
-        # Save the weights for each model
-        weights.append(theta)
-
-    # Return a joint multi-class model with weights for all classes
-    return np.vstack(weights).transpose()
 
 
 def predict(model: np.ndarray, test_x: pd.DataFrame) -> np.ndarray:
@@ -343,3 +309,52 @@ def train_DNN(dataframe, n_splits, n_calls, epochs):
 
     return all_models
 
+
+
+
+def plot_convergence(all_models, n_calls, n_splits):
+    
+    mae_logger = [[fold_num + 1, x] for fold_num, result in enumerate(all_models) for x in result['func_vals']]
+    mae_df = pd.DataFrame(mae_logger, columns=['Fold', 'MAE (kcal/mol)'])
+    
+    # x values
+    x = np.linspace(1, n_calls, n_calls)
+
+    # y values
+    mae = [mae_df.loc[mae_df.iloc[:, 0] == fold, 'MAE (kcal/mol)'].cummin()
+           for fold in range(1, n_splits + 1)]
+    cumm_mae = list(zip(*mae))
+    y = [statistics.mean(call) for call in cumm_mae]
+
+    # standard devation
+    std = [statistics.stdev(call) for call in cumm_mae]
+
+    # standard devation bounds
+    y1 = [i - sd for i, sd in zip(y, std)]
+    y2 = [i + sd for i, sd in zip(y, std)]
+
+    # plot mean line
+    fig, ax = plt.subplots(figsize=[8, 6])
+    for axis in ['top','bottom','left','right']: ax.spines[axis].set_linewidth(2)
+
+    ax.plot(x, y,
+            color='green',
+            linewidth=2,
+            label='Average MAE over {} folds'.format(n_splits))
+
+    # plot standard deviation fill bounds
+    ax.fill_between(x, y1, y2,
+                    fc='lightsteelblue',
+                    ec='lightsteelblue',
+                    label='Standard deviation')
+
+    ax.set_xlabel('Number of calls $n$', fontsize=18)
+    ax.set_ylabel('MAE / kcal mol$^{-1}$', fontsize=18)
+    ax.tick_params(axis='both', which='major', labelsize=18)
+
+    ax.legend(fontsize=18)
+    plt.tight_layout()
+    
+    fig.savefig('.\data\08_reporting\convergence_plot.png')
+    
+    return ax
