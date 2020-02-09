@@ -49,10 +49,9 @@ def create_pipeline(**kwargs):
                 ["all_models", "params:n_calls", "params:n_splits"],
                 "ax",
             ),
-            node(
-                test_model,
-                ["test", "params:n_splits"],
-                "predictions",
-            ),
+            # node(
+            #     test_model,
+            #     ["test", "params:n_splits"],
+            #     "predictions",
         ]
     )
