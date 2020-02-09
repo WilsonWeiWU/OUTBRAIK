@@ -33,7 +33,7 @@ PLEASE DELETE THIS FILE ONCE YOU START WORKING ON YOUR OWN PROJECT!
 
 from kedro.pipeline import Pipeline, node
 
-from .nodes import plot_convergence, train_DNN
+from .nodes import plot_convergence, train_DNN, test_model
 
 
 def create_pipeline(**kwargs):
